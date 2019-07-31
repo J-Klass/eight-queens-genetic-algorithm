@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from eight_queens.genetic_algorithm.fitness import Fitness
 from eight_queens.genetic_algorithm.queen import Queen
+from eight_queens.plot.plot import show
 
 
 def create_placements(queen_list):
@@ -198,7 +199,7 @@ def genetic_algorithm(population, pop_size, elite_size, mutation_rate, generatio
     return best_placement
 
 
-def run_genetic_algorithm():
+def run_ga():
     """ Run genetic algorithm with specified parameters """
 
     # Create initial placements for the queens
@@ -213,6 +214,5 @@ def run_genetic_algorithm():
         mutation_rate=0.01,
         generations=100,
     )
-    # placements = [x.position for x in best_placement]
-    # show(placements)
-    print(best_placement)
+    placements = [x.position for x in best_placement]
+    show(placements)

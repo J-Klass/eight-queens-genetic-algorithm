@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 pre-commit = "*"
 pandas = "*"
+matplotlib = "*"
 
 [dev-packages]
 
