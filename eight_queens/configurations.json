@@ -1,5 +1,5 @@
 {
-  "number_of_queens": 30,
+  "number_of_queens": 8,
   "pop_size": 50,
   "elite_size": 20,
   "mutation_rate": 0.01,
