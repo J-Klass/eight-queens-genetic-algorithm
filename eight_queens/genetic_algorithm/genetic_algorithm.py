@@ -1,3 +1,4 @@
+import json
 import operator
 import random
 
@@ -5,7 +6,15 @@ import numpy as np
 import pandas as pd
 from eight_queens.genetic_algorithm.fitness import Fitness
 from eight_queens.genetic_algorithm.queen import Queen
-from eight_queens.plot.plot import show
+from eight_queens.plot.plot import plot
+
+with open("eight_queens/configurations.json") as json_file:
+    data = json.load(json_file)
+    NUMBER_OF_QUEENS = data["number_of_queens"]
+    POP_SIZE = data["pop_size"]
+    ELITE_SIZE = data["elite_size"]
+    MUTATION_RATE = data["mutation_rate"]
+    GENERATIONS = data["generations"]
 
 
 def create_placements(queen_list):
@@ -204,15 +213,15 @@ def run_ga():
 
     # Create initial placements for the queens
     queen_list = []
-    for i in range(1, 9):
+    for i in range(1, NUMBER_OF_QUEENS + 1):
         queen_list.append(Queen(i))
 
     best_placement = genetic_algorithm(
         population=queen_list,
-        pop_size=50,
-        elite_size=20,
-        mutation_rate=0.01,
-        generations=100,
+        pop_size=POP_SIZE,
+        elite_size=ELITE_SIZE,
+        mutation_rate=MUTATION_RATE,
+        generations=GENERATIONS,
     )
     placements = [x.position for x in best_placement]
-    show(placements)
+    plot(placements)
