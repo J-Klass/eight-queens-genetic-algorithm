@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>8 Queens Problem Genetig Algorithm</h1>
+  <h1>8 Queens Problem Genetic Algorithm</h1>
   <img src="result.png" width="100%" alt="result.png">
 </div>
 
